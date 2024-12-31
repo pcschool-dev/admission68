@@ -15,16 +15,27 @@
             height: 100%;
             border:none;
         }
-	.preloader-align{
-	  margin-top: 0; 
-	  margin-left: 0; 	 
+	#loading { 
+	  position: fixed; 
+	  top: 0; 
+	  left: 0; 
+	  width: 100%; 
+	  height: 100%; 
+	  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */ 
+	  z-index: 9999; /* Place loader on top of other content */ 
+	} 
+	 
+	.loader { 
+	  margin: auto; 
+	  width: 50px; 
+	  height: 50px; 	 
 	}
 </style>
 </head>
 <!-- <body>  -->
 <body onload="preLoading()">
-    <div align="center" class="preloader-align" id="loading" >
-	    <image src="double-whell-with-shadow (1).gif" ></image>
+    <div id="loading" >
+	    <image class="loader" src="double-whell-with-shadow (1).gif" ></image>
     </div>    
     <iframe enctype="multipart/form-data" scrolling="auto"  src="https://script.google.com/macros/s/AKfycbyyreP_A42wpO0FWqQ_Y9_VVWEC9-WEo06Mo_65_NXY4kMqHYBK1VImdaTTHkOA6kot4g/exec"></iframe>
     <script type="text/javascript">
