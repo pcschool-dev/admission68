@@ -48,7 +48,8 @@
     	let id = param.get('fbclid')
     	console.log(id)
 	    if(id){
-		preloader.innerHTML = '<h4>โปรดเปิดด้วย เบราว์เซอร์ภายนอก <br>Please open in external browser.</h4>'
+		preloader.innerHTML = `<h4>โปรดเปิดด้วย เบราว์เซอร์ภายนอก <br>Please open in external browser.</h4>
+			<br><iframe  scrolling="auto"  src="openExternalBrowser.mp4" ></iframe>`
 		preloader.style.display = 'block';
 		// window.location.href = 'https://pcschool-dev.github.io/admission68/'
 	    }
