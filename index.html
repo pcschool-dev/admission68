@@ -39,22 +39,25 @@
         let preloader = document.getElementById("loading");
 	function preLoading(){ //ซ่อน loading
 		preloader.style.display = 'none';
-	};
-	let idUID = window.location.search;
-	let param = new URLSearchParams(idUID);
-	let id = param.get('fbclid');
-	let x;
-	console.log(id)
-	    if(id){
-		preloader.style.display = 'block';
-		document.getElementById("link").style.display = 'none';
-		preloader.innerHTML = `<h4>โปรดเปิดด้วย เบราว์เซอร์ภายนอก <br>Please open in external browser.</h4>
-			<br><iframe  scrolling="auto"  src="openExternalBrowser.mp4" ></iframe>`
 		
-		window.location.href = 'https://pcschool-dev.github.io/admission68/'
-	    } else {
-		document.getElementById("link").style.display = 'block';    
-	    }	
+		let idUID = window.location.search;
+		let param = new URLSearchParams(idUID);
+		let id = param.get('fbclid');
+		let x;
+		console.log(id)
+		    if(id){
+			preloader.style.display = 'block';
+			    setInterval(function(){
+				document.getElementById("link").style.display = 'none';
+				preloader.innerHTML = `<h4>โปรดเปิดด้วย เบราว์เซอร์ภายนอก <br>Please open in external browser.</h4>
+				<br><iframe  scrolling="auto"  src="openExternalBrowser.mp4" ></iframe>`
+			    }, 10000);
+			window.location.href = 'https://pcschool-dev.github.io/admission68/'
+		    } else {
+			document.getElementById("link").style.display = 'block';    
+		    }	
+	};
+	
     </script>
 </body>    
 </html>
