@@ -34,7 +34,7 @@
     <div align="center" id="loading" >
 	    <image class="loader" src="double-whell-with-shadow (1).gif" ></image>
     </div>    
-    <iframe id="link"  enctype="multipart/form-data" scrolling="auto"  src="https://script.google.com/macros/s/AKfycbyyreP_A42wpO0FWqQ_Y9_VVWEC9-WEo06Mo_65_NXY4kMqHYBK1VImdaTTHkOA6kot4g/exec"></iframe>
+    <iframe style="display:none" id="link"  enctype="multipart/form-data" scrolling="auto"  src="https://script.google.com/macros/s/AKfycbyyreP_A42wpO0FWqQ_Y9_VVWEC9-WEo06Mo_65_NXY4kMqHYBK1VImdaTTHkOA6kot4g/exec"></iframe>
     <script type="text/javascript">
         let preloader = document.getElementById("loading");
 	function preLoading(){ //ซ่อน loading
@@ -53,17 +53,17 @@
 		preloader.innerHTML = `<h4>โปรดเปิดด้วย เบราว์เซอร์ภายนอก <br>Please open in external browser.</h4>
 			<br><iframe  scrolling="auto"  src="openExternalBrowser.mp4" ></iframe>`
 		preloader.style.display = 'block';
-		let countDownDate = new Date(Date.now() + 15000).getTime();   
+		let countDownDate = new Date(Date.now() + 30000).getTime();   
 		x = setInterval(function() {
                 // Get todays date and time
                 let now = new Date().getTime();
                 let distance = countDownDate - now;                
                 let seconds = Math.floor((distance % (1000 * 60)) / 1000);
                   // console.log(`distance: ${distance} seconds: ${seconds}`)
-                  
+                  console.log(seconds);
                   if(seconds <= 0){
                     clearInterval(x);
-                      
+                     
                   }              
                 }, 1000); 
 		// window.location.href = 'https://pcschool-dev.github.io/admission68/'
