@@ -37,22 +37,29 @@
     <iframe style="display:none" id="link"  enctype="multipart/form-data" scrolling="auto"  src="https://script.google.com/macros/s/AKfycbyyreP_A42wpO0FWqQ_Y9_VVWEC9-WEo06Mo_65_NXY4kMqHYBK1VImdaTTHkOA6kot4g/exec"></iframe>
     <script type="text/javascript">
         let preloader = document.getElementById("loading");
+	let idUID = window.location.search;
+	let param = new URLSearchParams(idUID);
+	let id = param.get('fbclid');
+	let x;
 	function preLoading(){ //ซ่อน loading
-		preloader.style.display = 'none';
+		preloader.style.display = 'none';	
+		let countDownDate = new Date(Date.now() + 10000).getTime();   
 		
-		let idUID = window.location.search;
-		let param = new URLSearchParams(idUID);
-		let id = param.get('fbclid');
-		let x;
 		console.log(id)
 		    if(id){
 			preloader.style.display = 'block';
 			document.getElementById("link").style.display = 'none';
 			preloader.innerHTML = `<h4>โปรดเปิดด้วย เบราว์เซอร์ภายนอก <br>Please open in external browser.</h4>
 				<br><iframe  scrolling="auto"  src="openExternalBrowser.mp4" ></iframe>`
-			    setInterval(function(){
-				window.location.href = 'https://pcschool-dev.github.io/admission68/'
-			    }, 10000);
+			x =  setInterval(function(){
+				let now = new Date().getTime();
+		                let distance = countDownDate - now;                
+		                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+				if(seconds <= 0){
+		                    clearInterval(x);
+		                    window.location.href = 'https://pcschool-dev.github.io/admission68/'
+		                }  				
+			}, 10000);
 			
 		    } else {
 			document.getElementById("link").style.display = 'block';    
