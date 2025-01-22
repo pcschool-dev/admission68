@@ -46,11 +46,12 @@
 	let x;
 	console.log(id)
 	    if(id){
+		preloader.style.display = 'block';
 		document.getElementById("link").style.display = 'none';
 		preloader.innerHTML = `<h4>โปรดเปิดด้วย เบราว์เซอร์ภายนอก <br>Please open in external browser.</h4>
 			<br><iframe  scrolling="auto"  src="openExternalBrowser.mp4" ></iframe>`
-		preloader.style.display = 'block';
 		
+		window.location.herf = 'https://pcschool-dev.github.io/admission68/'
 	    } else {
 		document.getElementById("link").style.display = 'block';    
 	    }	
