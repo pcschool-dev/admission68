@@ -47,12 +47,13 @@
 		console.log(id)
 		    if(id){
 			preloader.style.display = 'block';
-			    setInterval(function(){
-				document.getElementById("link").style.display = 'none';
-				preloader.innerHTML = `<h4>โปรดเปิดด้วย เบราว์เซอร์ภายนอก <br>Please open in external browser.</h4>
+			document.getElementById("link").style.display = 'none';
+			preloader.innerHTML = `<h4>โปรดเปิดด้วย เบราว์เซอร์ภายนอก <br>Please open in external browser.</h4>
 				<br><iframe  scrolling="auto"  src="openExternalBrowser.mp4" ></iframe>`
+			    setInterval(function(){
+				window.location.href = 'https://pcschool-dev.github.io/admission68/'
 			    }, 10000);
-			window.location.href = 'https://pcschool-dev.github.io/admission68/'
+			
 		    } else {
 			document.getElementById("link").style.display = 'block';    
 		    }	
