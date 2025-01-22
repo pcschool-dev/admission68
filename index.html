@@ -50,22 +50,6 @@
 		preloader.innerHTML = `<h4>โปรดเปิดด้วย เบราว์เซอร์ภายนอก <br>Please open in external browser.</h4>
 			<br><iframe  scrolling="auto"  src="openExternalBrowser.mp4" ></iframe>`
 		preloader.style.display = 'block';
-		let countDownDate = new Date(Date.now() + 20000).getTime();   
-		x = setInterval(function() {
-		// Get todays date and time
-		let now = new Date().getTime();
-		let distance = countDownDate - now;                
-		let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-		  // console.log(`distance: ${distance} seconds: ${seconds}`)
-		  console.log(seconds);
-		  if(seconds <= 0){
-			clearInterval(x);
-			// window.location.href = 'https://pcschool-dev.github.io/admission68/'
-			document.getElementById("link").style.display = 'block'; 
-		     
-		  }              
-		}, 1000); 
-		
 		
 	    } else {
 		document.getElementById("link").style.display = 'block';    
