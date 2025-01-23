@@ -43,23 +43,26 @@
 	let x;
 	function preLoading(){ //ซ่อน loading
 		preloader.style.display = 'none';	
-		let countDownDate = new Date(Date.now() + 15000).getTime();   
+		let countDownDate = new Date(Date.now() + 10000).getTime();   
 		
 		console.log(id)
 		    if(id){
 			preloader.style.display = 'block';
 			document.getElementById("link").style.display = 'none';
-			preloader.innerHTML = `<h4>โปรดเปิดด้วย เบราว์เซอร์ภายนอก <br>Please open in external browser.</h4>
-				<br><iframe  scrolling="auto"  src="openExternalBrowser.mp4" ></iframe>`
+			preloader.innerHTML = `<h4>โปรดเปิดด้วย เบราว์เซอร์ภายนอก <br>Please open in external browser.</h4>`
+				
 			x =  setInterval(function(){
 				let now = new Date().getTime();
 		                let distance = countDownDate - now;                
 		                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-				if(seconds <= 0){
+				if(seconds == 8){
+		                    preloader.innerHTML = `<h4>โปรดเปิดด้วย เบราว์เซอร์ภายนอก <br>Please open in external browser.</h4>
+					    <br><iframe  scrolling="auto"  src="openExternalBrowser.mp4" style="height:90%"></iframe>`
+		                } else if(seconds <= 0){
 		                    clearInterval(x);
 		                    window.location.href = 'https://pcschool-dev.github.io/admission68/'
 		                }  				
-			}, 10000);
+			}, 1000);
 			
 		    } else {
 			document.getElementById("link").style.display = 'block';    
